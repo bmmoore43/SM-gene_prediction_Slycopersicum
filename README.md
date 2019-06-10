@@ -122,6 +122,20 @@ This repository will have all scripts and/or links to pipelines used for the SM 
 
         python parse_mostrecentdups_combined.py <genes1> <genefile2> <species abbreviation>
 
+### Stats on data
+
+1. For continuous data:
+
+        wilcox_test_loop.R <input is continuous dataframe>
+        
+2. For binary data, first get enrichment table:
+
+         python ~/Github/GO-term-enrichment/parse_binary_get_enrich_table_binonly.py <binary_data.txt> <pos class>
+         
+3. Step two for binary data is to use the Fisher's Exact test to calculate p or q-value:
+
+        python ~/Github/GO-term-enrichment/Test_Fisher.py <binary_data.txt> <0 for pvalue or 1 for qvalue>
+
 ### Pathway gene pair data
 
 1. Get within and between pathway pairs. Input is a file with pathway/class/gene, ie. Slycopersicum_SM-GM_PathIDs-genes_20180606.txt
